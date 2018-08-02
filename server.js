@@ -13,7 +13,7 @@ configure();
 
 app.get("/", function(req, res) {
 	res.render("index.html");
-}
+});
 
 //require("./router/main")(app);
 
