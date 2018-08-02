@@ -1,4 +1,4 @@
-//  OpenShift sample Node application
+/* //  OpenShift sample Node application
 var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
@@ -106,3 +106,11 @@ app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
 module.exports = app ;
+ */
+ 
+var http = require('http');
+
+http.createServer(function (req, res) {
+	res.writeHead(200, {'Content-Type': 'text/html'});
+	res.end('Hello World!');
+}).listen(8080); 
