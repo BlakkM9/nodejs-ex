@@ -27,11 +27,11 @@ const con = sql.createConnection({
     password: "nNojfhnk8v2AJIle",
     database: "website_users"
 });
-//
-// con.connect(function(err) {
-//     if (err) throw err;
-//     console.log("Connected to DB");
-// });
+
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected to DB");
+});
 
 app.listen(port, ip, function(){
     console.log("Listening on " + ip + ":" + port);
