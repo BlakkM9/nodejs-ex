@@ -9,6 +9,7 @@ Object.assign=require('object-assign')
 app.engine('html', require('ejs').renderFile);
 
 app.get("/", function(req, res) {
+	console.log("redirected");
 	res.send("HELLO TEST")
 });
 
