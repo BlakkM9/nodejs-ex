@@ -1,10 +1,9 @@
 //  OpenShift sample Node application
 var express	= require("express");
 var app		= express();
-var http	= require("http").Server(app);
 var morgan = require("morgan");
     
-Object.assign=require('object-assign')
+// Object.assign = require('object-assign');
 
 app.engine('html', require('ejs').renderFile);
 // app.set("views", __dirname + "/views");
