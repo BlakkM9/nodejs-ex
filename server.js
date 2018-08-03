@@ -2,16 +2,17 @@
 var express	= require("express");
 var app		= express();
 var http	= require("http").Server(app);
+var morgan = require("morgan");
     
 Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
-app.set("views", __dirname + "/views");
+// app.set("views", __dirname + "/views");
 app.use(morgan('combined'));
 
 app.get("/", function(req, res) {
 	console.log("redirected");
-	res.render("index");
+	res.send("TEST THE CLICKS");
 });
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
