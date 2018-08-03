@@ -2,6 +2,7 @@
 var express	= require("express");
 var app		= express();
 var morgan = require("morgan");
+var mysql = require("mysql");
     
 Object.assign = require('object-assign');
 
@@ -19,9 +20,23 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     // mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     // mongoURLLabel = "";
 
+const con = sql.createConnection({
+    host: "mysql",
+	port: "3306",
+    user: "access",
+    password: "nNojfhnk8v2AJIle",
+    // database: "users"
+});
+
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected to DB");
+});
+
 app.listen(port, ip, function(){
     console.log("Listening on " + ip + ":" + port);
 });
+
 
 /* if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
   var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
