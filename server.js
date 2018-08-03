@@ -2,12 +2,12 @@
 var express	= require("express");
 var app		= express();
 var http	= require("http").Server(app);
-
     
 Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
 app.set("views", __dirname + "/views");
+app.use(morgan('combined'));
 
 app.get("/", function(req, res) {
 	console.log("redirected");
@@ -23,9 +23,7 @@ app.listen(port, ip, function(){
     console.log("Listening on " + ip + ":" + port);
 });
 
-/* app.use(morgan('combined'))
-
-if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
+/* if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
   var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
       mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'],
       mongoPort = process.env[mongoServiceName + '_SERVICE_PORT'],
