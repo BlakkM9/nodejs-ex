@@ -20,13 +20,13 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     // mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     // mongoURLLabel = "";
 
-// const con = sql.createConnection({
-//     host: "mysql",
-// 	port: "3306",
-//     user: "access",
-//     password: "nNojfhnk8v2AJIle",
-//     // database: "users"
-// });
+const con = sql.createConnection({
+    host: "db4free.net",
+	port: "3306",
+    user: "access",
+    password: "nNojfhnk8v2AJIle",
+    database: "website_users"
+});
 //
 // con.connect(function(err) {
 //     if (err) throw err;
