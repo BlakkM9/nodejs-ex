@@ -17,7 +17,7 @@ const con = mysql.createConnection({
     host: "db4free.net",
 	port: "3306",
     user: "access",
-    password: "nNojfhnk8v2AJIle",
+    password: "**********",
     database: "website_users"
 });
 
