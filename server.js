@@ -1,7 +1,8 @@
 //  OpenShift sample Node application
-var express = require('express'),
-    app     = express(),
-    morgan  = require('morgan');
+var express	= require("express");
+var app		= express();
+var http	= require("http").Server(app);
+
     
 Object.assign=require('object-assign')
 
@@ -107,7 +108,8 @@ initDb(function(err){
   console.log('Error connecting to Mongo. Message:\n'+err);
 }); */
 
-app.listen(port, ip);
-console.log('Server running on http://%s:%s', ip, port);
+http.listen(3000, function(){
+    console.log("Listening on 3000");
+});
 
 module.exports = app ;
