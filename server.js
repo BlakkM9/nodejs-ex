@@ -14,12 +14,16 @@ app.get("/", function(req, res) {
 	res.render("index");
 });
 
-/* app.use(morgan('combined'))
-
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
-    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
-    mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
-    mongoURLLabel = "";
+    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+    // mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
+    // mongoURLLabel = "";
+
+app.listen(port, ip, function(){
+    console.log("Listening on " + ip + ":" + port);
+});
+
+/* app.use(morgan('combined'))
 
 if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
   var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
@@ -109,9 +113,5 @@ app.use(function(err, req, res, next){
 initDb(function(err){
   console.log('Error connecting to Mongo. Message:\n'+err);
 }); */
-
-http.listen(3000, function(){
-    console.log("Listening on 3000");
-});
-
-module.exports = app ;
+//
+// module.exports = app ;
