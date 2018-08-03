@@ -7,10 +7,11 @@ var http	= require("http").Server(app);
 Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
+app.set("views", __dirname + "/website");
 
 app.get("/", function(req, res) {
 	console.log("redirected");
-	res.send("HELLO TEST")
+	res.render("index");
 });
 
 /* app.use(morgan('combined'))
